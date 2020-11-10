@@ -8,8 +8,8 @@ const resolve = (file) => {
 
 // const build = spawn('./node_modules/.bin/webpack --config ./webpack.config.js');
 
-if (fs.existsSync(resolve('./dist/main.js'))) {
-  fs.rmSync(resolve('./dist/main.js'));
+if (fs.existsSync(resolve('./dist'))) {
+  fs.rmdirSync(resolve('./dist'));
 };
 
 const build = spawn(
@@ -35,17 +35,16 @@ build.on('close', (code) => {
 
   if (!fs.existsSync(resolve('./dist/main.js'))) return
 
-  fs.copyFileSync(templatePath, resolve('./dist/index.html'));
+  fs.copyFileSync(templatePath, resolve('./public/assets/index.html'));
   console.log('copy successfully');
 
   const js = fs.readFileSync(resolve('./dist/main.js'), {encoding: 'utf8'});
 
   fs.appendFileSync(
-    resolve('./dist/index.html'),
+    resolve('./public/assets/index.html'),
     `${js}\n</script>\n</body>\n</html>`,
     {
       encoding: 'utf8',
     }
   );
-  fs.rmSync(resolve('./dist/main.js'));
 })

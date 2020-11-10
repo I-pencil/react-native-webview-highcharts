@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts';
 import _ from 'lodash';
 
-import { ConfigOptions } from '.';
+import { ConfigOptions } from '../public/src';
 
 
 function parseJSON(str: string) {
