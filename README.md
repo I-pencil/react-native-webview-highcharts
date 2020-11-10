@@ -2,7 +2,7 @@
 
 **React Native Webview Highcharts** is a chart library based on [Highcharts](https://www.highcharts.com.cn/) for React Native.
 
-** Note:**
+**Note:**
 
 React Native Webview Highcharts needs to be used with [react-native-webview](https://github.com/react-native-webview/react-native-webview).
 
