@@ -77,7 +77,7 @@ There are two methods in React Native Webview Highcharts:
 
 ### 1. create(configOptions)
 
-The `create` method creates a chart by calling the initialization function `Highcharts.chart`. When the chart is created, `window.ReactNativeWebView.postMessage(data)` is called so that React Native can know that the chart has been created. Among them, the parameter data of `postMessage` is `JSON.stringify({event:'created'})`.
+The `create` method creates a chart by calling the initialization function [`Highcharts.chart`](https://api.highcharts.com.cn/highcharts#Highcharts.chart). When the chart is created, `window.ReactNativeWebView.postMessage(data)` is called so that React Native can know that the chart has been created. Among them, the parameter data of `postMessage` is `JSON.stringify({event:'created'})`.
 
 ### 2. update(configOptions)
 
@@ -95,4 +95,4 @@ xAxisPrecision | number | no  | x-axis label formatting precision
 yAxisPrecision | number | no  | y-axis label formatting precision
 debug | boolean | no | debug mode
 
-When the X-axis or Y-axis label is a number, we often need to format the number according to the precision. At this time, we can configure ` xAxisPrecision ` or ` yAxisPrecision `. Of course, we can also customize the formatting function in the configuration, that is, configure the ` xAxis.labels.formatter ` method.
+When the X-axis or Y-axis label is a number, we often need to format the number according to the precision. At this time, we can configure ` xAxisPrecision ` or ` yAxisPrecision `. Of course, we can also customize the formatting function in the configuration, that is, configure the [` xAxis.labels.formatter `](https://api.highcharts.com.cn/highcharts#xAxis.labels.formatter) method.
