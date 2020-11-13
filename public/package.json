@@ -1,7 +1,7 @@
 {
   "name": "react-native-webview-highcharts",
   "version": "1.0.0",
-  "description": "a chart based on Highcharts for React Native",
+  "description": "a chart library based on Highcharts for React Native",
   "main": "./lib/index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -16,7 +16,7 @@
     "React Native",
     "Highcharts"
   ],
-  "author": "I-pencil <littlesakurahu@gmail.com>",
+  "author": "Sakura HU <littlesakurahu@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/I-pencil/react-native-webview-highcharts/issues"

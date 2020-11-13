@@ -12,10 +12,10 @@ if (fs.existsSync(resolve('./dist'))) {
   fs.rmdirSync(resolve('./dist'));
 };
 
-const build = spawn(
-  'npm',
-  ['run', 'build'],
-);
+if (fs.existsSync(resolve('./public/dist'))) {
+  fs.rmdirSync(resolve('./public/dist'));
+}
+const build = spawn('npm', ['run', 'build']);
 build.stdout.on('data', (data) => {
   // console.log('stdout: ', data);
 })
@@ -35,13 +35,13 @@ build.on('close', (code) => {
 
   if (!fs.existsSync(resolve('./dist/main.js'))) return
 
-  fs.copyFileSync(templatePath, resolve('./public/assets/index.html'));
+  fs.copyFileSync(templatePath, resolve('./public/dist/index.html'));
   console.log('copy successfully');
 
   const js = fs.readFileSync(resolve('./dist/main.js'), {encoding: 'utf8'});
 
   fs.appendFileSync(
-    resolve('./public/assets/index.html'),
+    resolve('./public/dist/index.html'),
     `${js}\n</script>\n</body>\n</html>`,
     {
       encoding: 'utf8',
